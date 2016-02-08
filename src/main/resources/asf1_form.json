@@ -1,0 +1,44 @@
+{
+  "serviceDeliveryID": "12345",
+  "PersonalDetails": {
+    "Name": {
+      "Title": "Mr",
+      "FamilyName": "John",
+      "GivenNames": "Alex"
+    },
+    "OtherNames": "Y",
+    "OtherTitle": "Dr",
+    "OtherFamilyName": "John",
+    "OtherGivenNames": "Al",
+    "GenderType": "M",
+    "RelationshipStatus": "Married",
+    "DateOfBirth": {
+      "Day": "01",
+      "Month": "02",
+      "Year": "1980"
+    },
+    "AppliedForSupportAsDependant": "Y",
+    "DependantOfName": {
+      "Title": "Ms",
+      "FamilyName": "John",
+      "GivenNames": "Rosie"
+    },
+    "DependantOfAsylumSupportReferenceNumber": "A1234",
+    "AppliedForSupport": "Y",
+    "AsylumSupportReferenceNumber": "A12",
+    "OtherNationalityYesNo": "Y",
+    "OtherNationality": "Sudani",
+    "PastOtherNationalityYesNo": "Y",
+    "PastOtherNationality": "Irani",
+    "PastOtherNationalityFrom": {
+      "Day": "01",
+      "Month": "02",
+      "Year": "1980"
+    },
+    "PastOtherNationalityTo": {
+      "Day": "01",
+      "Month": "01",
+      "Year": "2000"
+    }
+  }
+}
