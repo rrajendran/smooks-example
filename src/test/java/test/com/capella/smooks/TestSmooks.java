@@ -31,7 +31,6 @@ public class TestSmooks {
 
             // Configure the execution context to generate a report...
             //executionContext.setEventListener(new HtmlReportGenerator("target/report/report.html"));
-
             // Filter the input message to the outputWriter, using the execution context...
             smooks.filterSource(executionContext, new StreamSource(new ByteArrayInputStream(readInputMessage())), result);
 
@@ -45,7 +44,7 @@ public class TestSmooks {
 
     private static byte[] readInputMessage() {
         try {
-            return StreamUtils.readStream(new FileInputStream("src/main/resources/asf1_form.json"));
+            return StreamUtils.readStream(new FileInputStream("src/main/resources/input.json"));
         } catch (IOException e) {
             e.printStackTrace();
             return "<no-message/>".getBytes();
@@ -62,6 +61,6 @@ public class TestSmooks {
         ExecutionContext executionContext = smooks.createExecutionContext();
         String s = runSmooksTransform(executionContext);
         System.out.println("Result " + s);
-        System.out.println("****" + (executionContext.getBeanContext().getBean("sections")));
+        System.out.println("****" + (executionContext.getBeanContext().getBean("order")));
     }
 }
