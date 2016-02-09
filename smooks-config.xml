@@ -16,12 +16,11 @@
     There are more settings to for the org.milyn.json.JSONReader.
     Take a look at the Javadoc of the class for alle the possible parameters.
     -->
-    <json:reader rootName="section" keyWhitspaceReplacement="-">
+    <json:reader rootName="order" keyWhitspaceReplacement="-">
         <json:keyMap>
             <json:key from="date&amp;time" to="date-and-time" />
         </json:keyMap>
     </json:reader>
-
 
     <!--
     Create an "example.beans.Order" bean instance when we visit the start of the <order> element.
@@ -80,7 +79,7 @@
     As soon as these beans are created they will be added to this list.
      -->
     <jb:bean class="java.util.ArrayList" beanId="orderItems" createOnElement="order">
-        <jb:wiring beanIdRef="orderItem"/>
+        <jb:wiring beanIdRef="orderItem1"/>
     </jb:bean>
 
     <!--
@@ -88,11 +87,20 @@
     This bean is add to the on the previous declared ArrayList as soon as it is created, because
     it is target by that ArrayList via a bean binding.
     -->
-    <jb:bean class="com.capella.model.OrderItem" beanId="orderItem" createOnElement="order-item/element">
+<!--     <jb:bean class="com.capella.model.OrderItem" beanId="orderItem" createOnElement="order-item/element">
         <jb:value property="quantity" data="#/quantity" decoder="Integer"/>
         <jb:value property="productId" data="#/product-id" />
         <jb:value property="price" data="#/price" decoder="BigDecimal" />
         <jb:value property="title" data="#/title" />
+    </jb:bean> -->
+    
+    <jb:bean class="com.capella.model.OrderItem" beanId="orderItem1" createOnElement="order-item/element">
+ <!--        <jb:value property="quantity" data="#/quantity" decoder="Integer"/>
+        <jb:value property="productId" data="#/product-id" />
+        <jb:value property="price" data="#/price" decoder="BigDecimal" />
+        <jb:value property="title" data="#/title" /> -->
+        <jb:wiring beanIdRef="mapData" property="data"/>
+        
     </jb:bean>
 
 
@@ -109,7 +117,10 @@
         <jb:wiring beanIdRef="mapData" property="data"/>
     </jb:bean>
 
-    <jb:bean beanId="mapData" class="java.util.HashMap" createOnElement="person">
-        <jb:value data="asdf" property="asdf"/>
+    <jb:bean beanId="mapData" class="java.util.HashMap" createOnElement="order-item/element">
+        <jb:value property="quantity" data="quantity" decoder="Integer" />
+        <jb:value property="productId" data="productId" />
+        <jb:value property="price" data="#/price" decoder="BigDecimal" />
+        <jb:value property="title" data="#/title" />
     </jb:bean>
 </smooks-resource-list>
