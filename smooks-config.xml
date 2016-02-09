@@ -105,11 +105,11 @@
     </jb:bean>
 
     <jb:bean beanId="section" class="com.capella.model.Section" createOnElement="serviceDeliveryID">
-        <jb:value property="sectionName" data="serviceDeliveryID"/>
-        <jb:wiring beanIdRef="mapData" property="data"/>
+        <jb:value property="sectionName" data="PersonalDetails/Name/FamilyName"/>
+        <jb:wiring property="data"  beanIdRef="mapData"/>
     </jb:bean>
 
-    <jb:bean beanId="mapData" class="java.util.HashMap" createOnElement="person">
-        <jb:value data="asdf" property="asdf"/>
+    <jb:bean beanId="mapData" class="java.util.HashMap" createOnElement="section">
+        <jb:value data="PersonalDetails/Name/Title" property="title" />
     </jb:bean>
 </smooks-resource-list>

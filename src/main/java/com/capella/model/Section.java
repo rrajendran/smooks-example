@@ -1,6 +1,6 @@
 package com.capella.model;
 
-import java.util.Map;
+import java.util.HashMap;
 
 /**
  * Created on : 2/8/16
@@ -9,13 +9,13 @@ import java.util.Map;
  */
 public class Section {
     private String sectionName;
-    private Map<String,String> data;
+    private HashMap<String,String> data = new HashMap<String, String>();
 
-    public Map<String, String> getData() {
+    public HashMap<String, String> getData() {
         return data;
     }
 
-    public void setData(Map<String, String> data) {
+    public void setData(HashMap<String, String> data) {
         this.data = data;
     }
 
